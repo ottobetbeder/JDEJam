@@ -5,9 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    Transform sendEnemiesTo;
-
-    [SerializeField]
     GameObject[] Enemys;
 
     [SerializeField]
