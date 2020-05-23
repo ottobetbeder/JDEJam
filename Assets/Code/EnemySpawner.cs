@@ -26,12 +26,15 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    // ver mejorar el sistema de spawn de los enemigos para que no haya demasiados al mismo tiempo y aparezcan de menos a mas
     IEnumerator SpawnEnemies()
     {
         inCooldown = true;
-        Instantiate(Enemys[0]);
-       int rand = Random.Range(minCooldown, maxCooldown);
-       yield return new WaitForSeconds(rand);
-       inCooldown = false;
+        int rand = Random.Range(minCooldown, maxCooldown);
+
+        yield return new WaitForSeconds(rand);
+        Instantiate(Enemys[0],this.gameObject.transform);
+       
+        inCooldown = false;
     }
 }

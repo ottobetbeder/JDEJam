@@ -16,10 +16,13 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, MoveTo.position, Time.deltaTime * speed);
+    }
 
-        if (transform.position == MoveTo.position)
+     void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Base"))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
