@@ -249,7 +249,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65169876}
-  - component: {fileID: 65169877}
   m_Layer: 0
   m_Name: EnemySpawner_5
   m_TagString: Untagged
@@ -271,22 +270,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &65169877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65169875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &75386081
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 481198249}
+  - component: {fileID: 481198250}
   m_Layer: 0
   m_Name: SpawnerContainer
   m_TagString: Untagged
@@ -907,6 +891,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481198250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481198248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4fc89f46007fc48a704ba70ec60750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemySpawnPosition:
+  - {fileID: 1090840966}
+  - {fileID: 853601702}
+  - {fileID: 1986303942}
+  - {fileID: 558171914}
+  - {fileID: 65169876}
+  - {fileID: 1890878107}
+  - {fileID: 1429083055}
+  - {fileID: 1759711034}
+  EnemyPrefabs:
+  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
+  maxCooldown: 5
+  minCooldown: 2
 --- !u!1 &509586146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1083,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558171914}
-  - component: {fileID: 558171915}
   m_Layer: 0
   m_Name: EnemySpawner_4
   m_TagString: Untagged
@@ -1096,22 +1104,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &558171915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558171913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &592453910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1531,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 853601702}
-  - component: {fileID: 853601703}
   m_Layer: 0
   m_Name: EnemySpawner_2
   m_TagString: Untagged
@@ -1561,22 +1552,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &853601703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853601701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &917107979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2341,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090840966}
-  - component: {fileID: 1090840967}
   m_Layer: 0
   m_Name: EnemySpawner_1
   m_TagString: Untagged
@@ -2388,22 +2362,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1090840967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090840965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &1155051555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,7 +2732,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1429083055}
-  - component: {fileID: 1429083056}
   m_Layer: 0
   m_Name: EnemySpawner_7
   m_TagString: Untagged
@@ -2796,22 +2753,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1429083056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429083054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &1441016736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,7 +3001,7 @@ MonoBehaviour:
   playerBase: {fileID: 47249683}
   livesText: {fileID: 1799902790}
   GameOverPanel: {fileID: 1083798678}
-  CanLose: 1
+  CanLose: 0
 --- !u!4 &1551274166
 Transform:
   m_ObjectHideFlags: 0
@@ -3084,7 +3025,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1759711034}
-  - component: {fileID: 1759711035}
   m_Layer: 0
   m_Name: EnemySpawner_8
   m_TagString: Untagged
@@ -3106,22 +3046,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1759711035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759711033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &1799902788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,7 +3191,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890878107}
-  - component: {fileID: 1890878108}
   m_Layer: 0
   m_Name: EnemySpawner_6
   m_TagString: Untagged
@@ -3289,22 +3212,6 @@ Transform:
   m_Father: {fileID: 481198249}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1890878108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890878106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!1 &1944618994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986303942}
-  - component: {fileID: 1986303941}
   m_Layer: 0
   m_Name: EnemySpawner_3
   m_TagString: Untagged
@@ -3443,22 +3349,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1986303941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986303940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91c8bbd4d0e944096b889991a6fcd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemys:
-  - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
-  maxCooldown: 20
-  minCooldown: 7
 --- !u!4 &1986303942
 Transform:
   m_ObjectHideFlags: 0

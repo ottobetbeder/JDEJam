@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     {
         playerBase.BaseHurt += OnBaseHurt;
         livesText.text = lives.ToString();
-
     }
 
     private void OnBaseHurt()
