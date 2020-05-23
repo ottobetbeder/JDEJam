@@ -993,8 +993,10 @@ MonoBehaviour:
   - {fileID: 1890878107}
   - {fileID: 1429083055}
   - {fileID: 1759711034}
+  probEnemiesToAppear: 5000000014000000
   EnemyPrefabs:
   - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
+  - {fileID: 7914966051037425877, guid: 44310e3393bda73429be639f5640e8ee, type: 3}
   maxCooldown: 5
   minCooldown: 2
 --- !u!1 &509586146
@@ -1743,7 +1745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917107979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.842, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2097871358}
