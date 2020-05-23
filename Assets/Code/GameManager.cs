@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverPanel;
     public Animator cameraAnimator;
     public Text timer;
-    public float totalTime = 120f; //2 minutes
+    public float totalTime;
+    public int QuantityOfTimesToIncreaseDifficulty;
+    public AllEnemiesManager enemiesManager;
+    float TimeToIncreaseDifficulty;
 
     public bool CanLose = true;
 
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         playerBase.BaseHurt += OnBaseHurt;
         livesText.text = lives.ToString();
+        TimeToIncreaseDifficulty = totalTime / 2;
     }
 
     private void Update()
@@ -31,6 +35,13 @@ public class GameManager : MonoBehaviour
             Debug.LogError("YOU WIN");
         }
         UpdateLevelTimer(totalTime);
+
+        if (totalTime <= TimeToIncreaseDifficulty && QuantityOfTimesToIncreaseDifficulty > 0)
+        {
+            enemiesManager.IncreaseDifficulty();
+            TimeToIncreaseDifficulty = TimeToIncreaseDifficulty / 2;
+            QuantityOfTimesToIncreaseDifficulty--;
+        }
     }
 
     public void UpdateLevelTimer(float totalSeconds)

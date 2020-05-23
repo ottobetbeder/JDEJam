@@ -55,4 +55,9 @@ public class AllEnemiesManager : MonoBehaviour
         enemies.Remove(deadEnemy);
     }
 
+    public void IncreaseDifficulty()
+    {
+        maxEnemiesInMapAtSameTime++;
+    }
+
 }

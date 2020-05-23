@@ -3104,7 +3104,9 @@ MonoBehaviour:
   GameOverPanel: {fileID: 1083798678}
   cameraAnimator: {fileID: 519420030}
   timer: {fileID: 297772230}
-  totalTime: 10
+  totalTime: 60
+  QuantityOfTimesToIncreaseDifficulty: 3
+  enemiesManager: {fileID: 481198250}
   CanLose: 0
 --- !u!4 &1551274166
 Transform:
