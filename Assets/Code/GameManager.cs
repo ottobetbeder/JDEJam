@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public BaseManager playerBase;
     public Text livesText;
     public GameObject GameOverPanel;
+    public Animator cameraAnimator;
 
     public bool CanLose = true;
 
@@ -25,14 +26,15 @@ public class GameManager : MonoBehaviour
         if (lives <= 0)
         {
             livesText.text = "0";
-            if(CanLose)
+            if (CanLose)
             {
                 GameOverPanel.SetActive(true);
-            StartCoroutine(ResetSceen());
+                StartCoroutine(ResetSceen());
             }
         }
         else
         {
+            cameraAnimator.SetTrigger("Shake");
             livesText.text = lives.ToString();
         }
     }
