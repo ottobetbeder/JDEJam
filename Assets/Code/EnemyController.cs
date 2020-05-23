@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Base"))
+        if (collision.CompareTag("Base") || collision.CompareTag("ElectricPanel"))
         {
             Destroy(this.gameObject);
         }
