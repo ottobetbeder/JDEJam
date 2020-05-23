@@ -9,7 +9,7 @@ public class ElectricityManager : MonoBehaviour
     private List<GameObject> electricPanels;
 
     [SerializeField]
-    private List<GameObject> electricNodes;
+    private List<ElectricNode> electricNodes;
 
     [SerializeField]
     private float panelCooldown;
@@ -19,23 +19,23 @@ public class ElectricityManager : MonoBehaviour
     private void Start()
     {
         nodesPressed = new List<int>();
-        foreach (GameObject item in electricNodes)
+        foreach (ElectricNode item in electricNodes)
         {
-            item.GetComponent<ElectricNode>().NodeTouched += OnNodeTouched;
+            item.NodeTouched += OnNodeTouched;
         }
     }
 
-    private void OnNodeTouched(int id)
+    private void OnNodeTouched(ElectricNode node)
     {
         if (nodesPressed.Count < 2)
         {
-            if (nodesPressed.Contains(id))
+            if (nodesPressed.Contains(node.nodeId))
             {
-                nodesPressed.Remove(id);
+                nodesPressed.Remove(node.nodeId);
             }
             else
             {
-                nodesPressed.Add(id);
+                nodesPressed.Add(node.nodeId);
             }
         }
     }
@@ -45,7 +45,22 @@ public class ElectricityManager : MonoBehaviour
         if (nodesPressed.Count >= 2)
         {
             TurnOnPanel(nodesPressed[0]*10+ nodesPressed[1]);
+            TurnPanelVisualOff(nodesPressed[0]);
+            TurnPanelVisualOff(nodesPressed[1]);
+
             nodesPressed.Clear();
+        }
+    }
+
+    void TurnPanelVisualOff(int id)
+    {
+        foreach (ElectricNode item in electricNodes)
+        {
+            if (item.nodeId == id)
+            {
+                item.ChangeNodeVisual();
+                break;
+            }
         }
     }
 

@@ -5,16 +5,33 @@ using UnityEngine;
 
 public class ElectricNode : MonoBehaviour
 {
-    [SerializeField]
-    private int nodeId;
-    public Action<int> NodeTouched;
+    public int nodeId;
+    public Action<ElectricNode> NodeTouched;
 
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && NodeTouched != null)
         {
-            NodeTouched(nodeId);
+            ChangeNodeVisual();
+            NodeTouched(this);
+        }
+    }
+
+    int turnOnAndOff = -1;
+    public void ChangeNodeVisual()
+    {
+        turnOnAndOff *= -1;
+
+        if (turnOnAndOff > 0)
+        {
+            //turn node on colour etc
+            this.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+        else
+        {
+            //turn node on colour etc
+            this.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }
