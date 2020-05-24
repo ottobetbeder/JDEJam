@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void OnBaseHurt()
     {
+        lives--;
         if (lives <= 0)
         {
             livesText.text = "0";
@@ -75,19 +76,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lives--;
             cameraAnimator.SetTrigger("Shake");
             livesText.text = lives.ToString();
-            if (lives <= 0)
-            {
-                livesText.text = "0";
-                if (CanLose)
-                {
-                    GameOverPanel.SetActive(true);
-                    StartCoroutine(ResetSceen());
-                }
-            }
-            }
+        }
     }
 
     IEnumerator ResetSceen()

@@ -17,7 +17,7 @@ public class BoosterSpawner : MonoBehaviour
 
     private void Start()
     {
-      //  InvokeRepeating("CheckAndSpawnBooster",1f,spawnCooldown);
+        InvokeRepeating("CheckAndSpawnBooster",1f,spawnCooldown);
     }
 
     void CheckAndSpawnBooster()
