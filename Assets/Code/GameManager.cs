@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         if (totalTime <= 0)
         {
             totalTime = 0;
-            Debug.LogError("YOU WIN");
+            SceneManager.LoadScene("Win");
         }
         UpdateLevelTimer(totalTime);
 
