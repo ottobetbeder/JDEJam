@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) && dashCooldown.IsCoolDownCompleted)
                 {
                     isDashing = true;
-                    //Instantiate(DashEffect, transform.position, Quaternion.identity);
+                    Instantiate(DashEffect, transform.position, Quaternion.identity);
                     dashCooldown.SetCooldown();
                 }
             }
