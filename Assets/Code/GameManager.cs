@@ -78,7 +78,16 @@ public class GameManager : MonoBehaviour
             lives--;
             cameraAnimator.SetTrigger("Shake");
             livesText.text = lives.ToString();
-        }
+            if (lives <= 0)
+            {
+                livesText.text = "0";
+                if (CanLose)
+                {
+                    GameOverPanel.SetActive(true);
+                    StartCoroutine(ResetSceen());
+                }
+            }
+            }
     }
 
     IEnumerator ResetSceen()

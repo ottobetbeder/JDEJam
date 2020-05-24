@@ -6489,7 +6489,7 @@ MonoBehaviour:
   QuantityOfTimesToIncreaseDifficulty: 3
   enemiesManager: {fileID: 481198250}
   boosterSpawner: {fileID: 948860489}
-  CanLose: 0
+  CanLose: 1
 --- !u!4 &1551274166
 Transform:
   m_ObjectHideFlags: 0
