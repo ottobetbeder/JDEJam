@@ -119,10 +119,12 @@ public class AllEnemiesManager : MonoBehaviour
 
     private void DestroyAllEnemies()
     {
+        inCooldown = false;
         foreach (GameObject item in enemies)
         {
             item.GetComponent<EnemyController>().DestroyEnemiesAfter(0.1f);
         }
+        enemies.Clear();
     }
 
 }
