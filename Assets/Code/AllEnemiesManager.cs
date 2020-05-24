@@ -41,6 +41,8 @@ public class AllEnemiesManager : MonoBehaviour
     IEnumerator SpawnEnemies()
     {
         inCooldown = true;
+        Random.seed = (int)System.DateTime.Now.Ticks;
+
         int rand = Random.Range(minCooldown, maxCooldown);
 
         int spawnerPositionToUse = Random.Range(0, EnemySpawnPosition.Count-1);

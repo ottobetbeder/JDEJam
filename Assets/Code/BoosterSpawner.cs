@@ -25,6 +25,7 @@ public class BoosterSpawner : MonoBehaviour
         int rand = Random.Range(1, 100);
         if (rand < boosterAppearProb)
         {
+            Random.seed = (int)System.DateTime.Now.Ticks;
             Booster booster = Instantiate(boostersPrefabs[Random.Range(0, boostersPrefabs.Count)], boostersSpawnPosition[Random.Range(0, boostersSpawnPosition.Count)]).GetComponent<Booster>();
             booster.BoosterTouched += OnBoosterTouched;
         }
