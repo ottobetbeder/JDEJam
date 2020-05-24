@@ -8,6 +8,10 @@ public class Booster : MonoBehaviour
     public int boosterId;
     public Action<Booster> BoosterTouched;
 
+    private void Start()
+    {
+        StartCoroutine(DestroyAfterSeconds(6f));    
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -19,5 +23,10 @@ public class Booster : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    //destruirlo por tiempo tmb
+
+    IEnumerator DestroyAfterSeconds(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Destroy(this.gameObject);
+    }
 }

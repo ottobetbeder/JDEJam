@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject DashEffect;
     [SerializeField] private float cooldownTime;
     private bool isDashing;
+    [SerializeField] private BoosterSpawner boosterSpawner;
 
 
     void Start()
@@ -24,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
         dashCooldown = new CoolDownHability(cooldownTime);
+        boosterSpawner.SpeedBoosterTouched += SpeedBoosterTouched;
     }
 
     void FixedUpdate()
     {
-
         if (!isDashing)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
@@ -67,5 +68,22 @@ public class PlayerMovement : MonoBehaviour
                 rb2d.MovePosition(rb2d.position + movement * dashSpeed * Time.deltaTime);
             }
         }
+    }
+
+    private void SpeedBoosterTouched()
+    {
+        StartCoroutine(SpeedUpForSeconds(3.5f));
+    }
+
+    IEnumerator SpeedUpForSeconds(float secs)
+    {
+        float prevSpeed = speed;
+        TrailRenderer trail = this.GetComponent<TrailRenderer>();
+        trail.enabled = true;
+        speed = 4f;
+        yield return new WaitForSecondsRealtime(secs);
+        speed = prevSpeed;
+        trail.enabled = false;
+
     }
 }

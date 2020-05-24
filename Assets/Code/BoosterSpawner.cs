@@ -17,8 +17,7 @@ public class BoosterSpawner : MonoBehaviour
 
     private void Start()
     {
-        cooldown = new CoolDownHability(spawnCooldown);
-      //  InvokeRepeating("CheckAndSpawnBooster",1f,60f);
+        InvokeRepeating("CheckAndSpawnBooster",1f,spawnCooldown);
     }
 
     void CheckAndSpawnBooster()
@@ -26,10 +25,9 @@ public class BoosterSpawner : MonoBehaviour
         int rand = Random.Range(1, 100);
         if (rand < boosterAppearProb)
         {
-            Booster booster = Instantiate(boostersPrefabs[Random.Range(0, boostersPrefabs.Count-1)], boostersSpawnPosition[Random.Range(0, boostersSpawnPosition.Count - 1)]).GetComponent<Booster>();
+            Booster booster = Instantiate(boostersPrefabs[Random.Range(0, boostersPrefabs.Count)], boostersSpawnPosition[Random.Range(0, boostersSpawnPosition.Count)]).GetComponent<Booster>();
             booster.BoosterTouched += OnBoosterTouched;
         }
-
     }
 
     private void OnBoosterTouched(Booster booster)
@@ -60,8 +58,5 @@ public class BoosterSpawner : MonoBehaviour
                     break;
             }
         }
-
-
-
     }
 }
