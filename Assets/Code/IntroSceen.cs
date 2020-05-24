@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class IntroSceen : MonoBehaviour
 {
     public GameObject rays;
-    public AudioSource electricSound;
 
     public void StartButtonPressed()
     {
@@ -15,7 +14,6 @@ public class IntroSceen : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        electricSound.Play();
         rays.SetActive(true);
         yield return new WaitForSeconds(1.7f);
         SceneManager.LoadScene("SampleScene");
