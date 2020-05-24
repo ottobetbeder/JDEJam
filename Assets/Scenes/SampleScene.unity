@@ -2940,8 +2940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  dashSpeed: 0
-  startDashTime: 0
+  dashSpeed: 5
+  startDashTime: 0.3
   DashEffect: {fileID: 0}
   cooldownTime: 1
 --- !u!212 &917107981
