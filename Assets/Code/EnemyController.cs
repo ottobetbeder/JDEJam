@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
             {
                 Die(this.gameObject);
             }
-            StartCoroutine(DestroyAfterSeconds(0.1f));
+            DestroyEnemiesAfter(0.1f);
         }
     }
 
@@ -38,5 +38,9 @@ public class EnemyController : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void DestroyEnemiesAfter(float sec)
+    {
+        StartCoroutine(DestroyAfterSeconds(sec));
+    }
 
 }

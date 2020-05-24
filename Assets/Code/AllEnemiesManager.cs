@@ -7,6 +7,8 @@ public class AllEnemiesManager : MonoBehaviour
     public List<Transform> EnemySpawnPosition;
     private List<GameObject> enemies;
     private int maxEnemiesInMapAtSameTime;
+    [SerializeField]
+    private BoosterSpawner boosterSpawner;
 
     public int[] probEnemiesToAppear; // the sum of this values must be 100
 
@@ -23,6 +25,7 @@ public class AllEnemiesManager : MonoBehaviour
     {
         enemies = new List<GameObject>();
         maxEnemiesInMapAtSameTime = 2;
+        boosterSpawner.BombBoosterTouched += DestroyAllEnemies;
     }
 
     bool inCooldown = false;
@@ -110,6 +113,14 @@ public class AllEnemiesManager : MonoBehaviour
         }
         probEnemiesToAppear[0] +=  (100 - aux);
         incressDifValue = DIF_VALUE_TO_INCRESS;
+    }
+
+    private void DestroyAllEnemies()
+    {
+        foreach (GameObject item in enemies)
+        {
+            item.GetComponent<EnemyController>().DestroyEnemiesAfter(0.1f);
+        }
     }
 
 }
