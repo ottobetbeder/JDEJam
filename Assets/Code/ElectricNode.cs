@@ -8,6 +8,9 @@ public class ElectricNode : MonoBehaviour
     public int nodeId;
     public Action<ElectricNode> NodeTouched;
 
+    [SerializeField]
+    private GameObject activeNode;
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,16 +25,6 @@ public class ElectricNode : MonoBehaviour
     public void ChangeNodeVisual()
     {
         turnOnAndOff *= -1;
-
-        if (turnOnAndOff > 0)
-        {
-            //turn node on colour etc
-            this.GetComponent<SpriteRenderer>().color = Color.yellow;
-        }
-        else
-        {
-            //turn node on colour etc
-            this.GetComponent<SpriteRenderer>().color = Color.red;
-        }
+        activeNode.SetActive(turnOnAndOff > 0);
     }
 }
