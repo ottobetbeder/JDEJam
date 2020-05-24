@@ -15,7 +15,7 @@ public class IntroSceen : MonoBehaviour
     IEnumerator SpawnEnemies()
     {
         rays.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.7f);
         SceneManager.LoadScene("SampleScene");
     }
 }
