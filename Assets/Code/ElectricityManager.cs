@@ -44,11 +44,12 @@ public class ElectricityManager : MonoBehaviour
     {
         if (nodesPressed.Count >= 2)
         {
+            int nodeAux = nodesPressed[1];
             TurnOnPanel(nodesPressed[0]*10+ nodesPressed[1]);
             TurnPanelVisualOff(nodesPressed[0]);
-            TurnPanelVisualOff(nodesPressed[1]);
 
-            nodesPressed.Clear();
+
+            nodesPressed.Remove(nodesPressed[0]);
         }
     }
 
