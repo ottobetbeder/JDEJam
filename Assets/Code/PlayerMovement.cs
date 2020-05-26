@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         float prevSpeed = speed;
         TrailRenderer trail = this.GetComponent<TrailRenderer>();
         trail.enabled = true;
-        speed = 4f;
+        speed = 3.3f;
         yield return new WaitForSecondsRealtime(secs);
         speed = prevSpeed;
         trail.enabled = false;

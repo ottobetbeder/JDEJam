@@ -95,4 +95,9 @@ public class GameManager : MonoBehaviour
             livesText.text = lives.ToString();
         }
     }
+
+    public void BackToMenuButton()
+    {
+        SceneManager.LoadScene("Intro");
+    }
 }
