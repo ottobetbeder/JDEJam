@@ -1963,7 +1963,7 @@ MonoBehaviour:
   - {fileID: 1429083055}
   - {fileID: 1759711034}
   boosterSpawner: {fileID: 948860489}
-  probEnemiesToAppear: 5f00000005000000
+  probEnemiesToAppear: 5c00000008000000
   EnemyPrefabs:
   - {fileID: 7914966051037425877, guid: 1ac5afabe9c041642b56dfbad0826ce1, type: 3}
   - {fileID: 7914966051037425877, guid: 44310e3393bda73429be639f5640e8ee, type: 3}
@@ -6621,7 +6621,7 @@ MonoBehaviour:
   cameraAnimator: {fileID: 519420030}
   timer: {fileID: 297772230}
   totalTime: 90
-  QuantityOfTimesToIncreaseDifficulty: 2
+  QuantityOfTimesToIncreaseDifficulty: 4
   enemiesManager: {fileID: 481198250}
   boosterSpawner: {fileID: 948860489}
   CanLose: 1

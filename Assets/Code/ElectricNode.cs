@@ -16,9 +16,21 @@ public class ElectricNode : MonoBehaviour
     {
         if (collision.CompareTag("Player") && NodeTouched != null)
         {
-            ChangeNodeVisual();
+            //ChangeNodeVisual();
+            TurnOnNodeActiveImage();
             NodeTouched(this);
         }
+    }
+
+    public void TurnOnNodeActiveImage()
+    {
+        turnOnAndOff *= -1;
+        activeNode.SetActive(true);
+    }
+
+    public void TurnOffNodeActiveImage()
+    {
+        activeNode.SetActive(false);
     }
 
     int turnOnAndOff = -1;

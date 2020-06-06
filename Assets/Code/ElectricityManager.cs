@@ -29,11 +29,7 @@ public class ElectricityManager : MonoBehaviour
     {
         if (nodesPressed.Count < 2)
         {
-            if (nodesPressed.Contains(node.nodeId))
-            {
-                nodesPressed.Remove(node.nodeId);
-            }
-            else
+            if (!nodesPressed.Contains(node.nodeId))
             {
                 nodesPressed.Add(node.nodeId);
             }
@@ -48,7 +44,6 @@ public class ElectricityManager : MonoBehaviour
             TurnOnPanel(nodesPressed[0]*10+ nodesPressed[1]);
             TurnPanelVisualOff(nodesPressed[0]);
 
-
             nodesPressed.Remove(nodesPressed[0]);
         }
     }
@@ -59,7 +54,7 @@ public class ElectricityManager : MonoBehaviour
         {
             if (item.nodeId == id)
             {
-                item.ChangeNodeVisual();
+                item.TurnOffNodeActiveImage();
                 break;
             }
         }
